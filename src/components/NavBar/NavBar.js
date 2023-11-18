@@ -1,4 +1,4 @@
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget";
 import brandLogo from "./assets/brand-logo.png";
 
 const NavBar = () => {
@@ -21,16 +21,16 @@ const NavBar = () => {
         <div className="navbar-menu">
           <ul className="navbar-menu">
             <li className="navbar-item p-1">
-              <a href="#" className="button is-info is-light">Categoria 1</a>
+              <a href="#" className="button is-info">Categoria 1</a>
             </li>
             <li className="navbar-item p-1">
-              <a href="#" className="button is-info is-light">Categoria 2</a>
+              <a href="#" className="button is-info">Categoria 2</a>
             </li>
             <li className="navbar-item p-1">
-              <a href="#" className="button is-info is-light">Categoria 3</a>
+              <a href="#" className="button is-info">Categoria 3</a>
             </li>
             <li className="navbar-item p-1">
-              <a href="#" className="button is-info is-light">Categoria 4</a>
+              <a href="#" className="button is-info">Categoria 4</a>
             </li>
           </ul>
         </div>

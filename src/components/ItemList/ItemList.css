@@ -1,0 +1,11 @@
+.main-container{
+    width: 90%;
+    margin: auto;
+}
+
+.grid-container{
+    background-color: rgb(237, 237, 237);
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 50px;
+}

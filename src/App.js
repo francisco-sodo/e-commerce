@@ -1,8 +1,10 @@
+//rafce
 import "bulma/css/bulma.css";
 import "boxicons/css/boxicons.min.css";
 
 import NavBar from "./components/NavBar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 
 function App(){
@@ -10,6 +12,7 @@ function App(){
         <div className="App">
             <NavBar />
             <ItemListContainer greeting={"Bienvenidos a MyBrand"}/>
+            <ItemDetailContainer/>
         </div>
     )
 }
