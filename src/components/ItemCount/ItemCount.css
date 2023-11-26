@@ -1,34 +1,8 @@
-.container-main{
-    width: 300px;
-    height: auto;
-    margin: auto;
-    background-color: rgb(82, 158, 230);
-    border-radius: 5px;
-}
-.content-f{
-    padding: 30px;
-    display: flex;
-    flex-direction: column; 
-}
-.container-title{
-    margin-bottom: 20px;
-}
-.title-f{
-    color: #fff;
-    text-align: center;
-    font-size: 1.3rem;
-}
+
+
 .container-controls{
     display: flex;
-    justify-content: space-evenly;
+    gap: 20px;
     align-items: center;
-    margin-bottom: 20px;
-}
-.stock-number{
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-}
-.container-button{
-    margin: auto;
+    
 }

@@ -4,7 +4,7 @@ import "./ItemCount.css"
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [quantity, setQuantity]=useState(initial);
+    const [quantity, setQuantity]=useState(1);
 
 
     const increment = () =>{
@@ -16,29 +16,35 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
 
   return (
-    <div className="container-main">
+    
 
-        <div className="content-f">
-
-            <div className="container-title">
-                <h3 className="title-f">Nombre Producto</h3>
-            </div>
+        <div>
+            <h3 className="is-size-7 mb-3">Cantidad</h3>
+            
 
             <div className="container-controls">
-                <button onClick={increment} className="button is-info">+</button>
-                <span className="stock-number">{quantity}</span>
-                <button onClick={decrement} className="button is-info">-</button>
+                <button onClick={increment} className="button is-small">
+                    <span className="icon">
+                        <i className='bx bx-plus'></i>
+                    </span>
+                </button>
+                <span>{quantity}</span>
+                <button onClick={decrement} className="button is-small">
+                    <span className="icon">
+                        <i className='bx bx-minus'></i>
+                    </span>
+                </button>
             </div>
 
-            <div className="container-button">
-                <button className="button is-dark" 
+            <div>
+                <button className="button is-dark mt-5" 
                 onClick={()=> onAdd(quantity)} disabled={!stock}>Agregar al carrito
                 </button>
             </div>
 
         </div>
 
-    </div>
+   
   )
 }
 

@@ -1,0 +1,25 @@
+.main-container{
+    width: 90%;
+    background-color: rgb(237, 237, 237);
+}
+.sub-container{
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgb(229, 229, 229);
+    display:flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+.figure-img{
+    max-width: 500px;
+}
+.info-content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 500px;
+    
+}

@@ -1,10 +1,11 @@
+import {Link} from "react-router-dom";
+// import { useParams } from 'react-router-dom'
+// import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
-
-const Item = ({id,name,category,img,price,stock,description}) => {
-
-
+const Item = ({id,name,category,img,price,stock}) => {
 
   return (
+
 
       <article className="card m-2">
 
@@ -28,7 +29,10 @@ const Item = ({id,name,category,img,price,stock,description}) => {
 
         <div className="card-footer has-background-info-light">
           <div className="card-footer-item">
-            <button className="button is-info is-light is-normal">Ver detalles</button>
+            <Link to={`/item/${id}`}>
+              <button className="button is-info is-light is-normal">Ver detalles</button>
+            </Link>
+           
           </div>
         </div>
 
