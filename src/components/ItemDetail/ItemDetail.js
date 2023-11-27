@@ -9,7 +9,7 @@ const ItemDetail = ({initial, id,name,category,img,price,stock,description}) => 
   
   return (
     <div className="main-container">
-      <Link to='/'>Volver</Link>
+      <Link to='/'><p className="p-2">{"< Volver"}</p></Link>
       <div className="sub-container" >
 
         <section>

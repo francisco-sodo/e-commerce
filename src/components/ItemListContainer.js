@@ -26,9 +26,9 @@ const ItemListContainer = ({greeting}) =>{
 
 
     return(
-        <div className="hero is-medium">
+        <div className="hero is-small">
 
-            <div className="hero-body container">
+            <div className="hero-body container p-6">
                 <h1 className="title has-text-link-dark">{greeting}</h1>
             </div>
 
