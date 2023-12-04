@@ -1,19 +1,29 @@
 // import "boxicons/css/boxicons.min.css";
+import { useContext } from "react"
+import { CartContext } from "../context/CartContext"
+import { Link } from 'react-router-dom'
 
-const CartWidget = ({number}) =>{
 
+
+const CartWidget = () => {
+
+    const {totalQuantity} = useContext(CartContext)
+    
     return(
-        <div className="navbar-item">
-            <button className="button is-danger">
-                <span className="icon-text">
-                    <span className="icon">
-                        <i className='bx bxs-cart bx-sm'></i>
-                    </span>
-                    <span>{number}</span>
-                </span>
-            </button>
-        </div>
+        
+            <Link to='/cart' className="button is-danger"
+            style={{display: totalQuantity() > 0 ? 'flex' : 'none'}}
+            >
+                <div className="icon">
+                    <i className='bx bxs-cart bx-sm'></i>
+                </div>
+                
+                <span>{totalQuantity()}</span>
+            </Link>
+       
     )
 }
 
 export default CartWidget;
+
+

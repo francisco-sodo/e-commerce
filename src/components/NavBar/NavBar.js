@@ -38,7 +38,7 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
-          <CartWidget number={0} />
+          <CartWidget/>
         </div>
 
       </div>
