@@ -7,16 +7,20 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({id, name, category, img, price, stock, description}) => {
 
-const [quantityAdded, setQuantityAdded] = useState(0);
+    const [quantityAdded, setQuantityAdded] = useState(0);
 
-const { addItem } = useContext(CartContext);
-  
-const handleOnAdd = (quantity) => {
-  setQuantityAdded(quantity)
+    const { addItem } = useContext(CartContext);
 
-  const item = { id, name, price }
-  addItem(item, quantity)
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+
+        const item = { id, name, price }
+        addItem(item, quantity)
+   
 }
+
+
+
 
   return (
     <div className="main-container">
@@ -37,19 +41,18 @@ const handleOnAdd = (quantity) => {
             <p className="is-size-7 mb-4">{description}</p>
             <h4 className="is-size-4 mb-4">Precio: ${price}</h4>
             
+            {/* <p className="is-size-6">Stock: {stock += - quantityAdded}</p> */}
             <p className="is-size-6">Stock: {stock}</p>
+            
             
           </div>
 
           <div>
             {
-              quantityAdded > 0 ? (
-                <Link to="/cart">Terminar compra</Link>
-              ) : (
-                <ItemCount stock={stock} onAdd={handleOnAdd}/>
-              )
-
-
+              quantityAdded > 0 ? 
+              (<Link to="/cart">Terminar compra</Link>) : 
+              (<ItemCount stock={stock} onAdd={handleOnAdd}/>)
+             
             }
             
           </div>

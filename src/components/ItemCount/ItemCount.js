@@ -11,13 +11,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
         quantity < stock && setQuantity(quantity + 1)
     }
     const decrement = () =>{
-        quantity > 0 && setQuantity(quantity - 1)
+        quantity > 1 && setQuantity(quantity - 1)
     }
+
+    
 
 
   return (
-    
-
         <div>
             <h3 className="is-size-7 mb-3">Cantidad</h3>
             
@@ -28,7 +28,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
                         <i className='bx bx-plus'></i>
                     </span>
                 </button>
+
                 <span>{quantity}</span>
+
                 <button onClick={decrement} className="button is-small">
                     <span className="icon">
                         <i className='bx bx-minus'></i>

@@ -12,14 +12,15 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
 
-   //si el producto esta o no esta en el carrito
+    //si el producto esta o no esta en el carrito
    const isInCart = (itemId) => {
     return cart.some(prod => prod.id === itemId)
 }
+
     // agregar nuevo producto al carrito
     const addItem = (item, quantity) => { 
         if(!isInCart(item.id)){
-            setCart(prev => [...prev, {...item, quantity}])   
+            setCart(prev => [...prev, {...item, quantity}])    
         }else{
             console.error('El producto ya fue agregado')
         }
@@ -30,7 +31,6 @@ const CartProvider = ({ children }) => {
         const cartUpdated = cart.filter(prod => prod.id !== itemId)
         setCart(cartUpdated)
         console.log("item eliminado")
-        
     }
 
     // limpiar todo el carrito
@@ -45,6 +45,9 @@ const CartProvider = ({ children }) => {
     const total = () =>{
         return cart.reduce((acc,prod)=> acc + prod.price * prod.quantity, 0)  
      }
+
+
+   
 
    
 

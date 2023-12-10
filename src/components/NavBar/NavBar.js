@@ -1,4 +1,4 @@
-import CartWidget from "../CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import brandLogo from "./assets/brand-logo.png";
 
 import { Link, NavLink } from "react-router-dom"
@@ -23,8 +23,8 @@ const NavBar = () => {
           </span>
         
 
-        <div className="navbar-menu">
-          <ul className="navbar-menu">
+        <div className="navbar-end">
+          <ul className="navbar-menu mr-5">
             <li className="navbar-item p-1">
               <NavLink to="/category/lego" className="button is-info" >Lego</NavLink>
             </li>
