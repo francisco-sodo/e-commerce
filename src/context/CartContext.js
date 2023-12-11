@@ -43,7 +43,7 @@ const CartProvider = ({ children }) => {
     }
     // limpiar todo el carrito
     const total = () =>{
-        return cart.reduce((acc,prod)=> acc + prod.price * prod.quantity, 0)  
+        return  cart.reduce((acc,prod)=> acc + prod.price * prod.quantity, 0)  
      }
 
 

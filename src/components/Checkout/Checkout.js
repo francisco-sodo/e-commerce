@@ -1,8 +1,9 @@
 import { useContext, useState } from 'react'
 import { CartContext } from "../../context/CartContext"
 import { db } from '../../services/firebase/firebaseConfig'
-import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import { collection, getDocs, query, where, documentId, addDoc, Timestamp, writeBatch } from 'firebase/firestore'
+
+import CheckoutForm from '../CheckoutForm/CheckoutForm'
 
 const Checkout = () => {
 
@@ -17,13 +18,14 @@ const Checkout = () => {
 
         setLoading(true)
 
-        try{
+        try {
             const objOrder = {
                 buyer: {name, phone, email},
                 items: cart,
-                total: total,
+                total: total(),
                 date: Timestamp.fromDate(new Date())
             }
+            
             const batch = writeBatch(db)
 
             const outOfStock = []
@@ -49,26 +51,27 @@ const Checkout = () => {
                     outOfStock.push({ id: doc.id, ...dataDoc})
                 }
             })
-
-            if(outOfStock.length === 0) {
+//!ACA ESTA EL PROBLEMA
+            if(outOfStock.length === 0 ) {
                 await batch.commit()
                 
                 const orderRef = collection(db, 'orders')
 
-                const orderAdded = await addDoc(orderRef, objOrder)
+                const orderAdded =  await addDoc(orderRef, objOrder)
 
                 setOrderId(orderAdded.id)
                 clearCart()
-
+//!ACA ESTA EL PROBLEMA
             } else{
                 console.error("Hay productos sin stock")
             }
-        }
-        catch(error){
-            console.log(error)
+            
+        } catch(error){
+            console.log(" ALGO SALIO MAL " + error)
         } finally {
             setLoading(false)
         }
+        
     }
 
     if(loading){
@@ -83,7 +86,9 @@ const Checkout = () => {
     <div>
         <h1>Checkout</h1>
         <CheckoutForm onConfirm={createOrder}/>
+    
     </div>
+    
   )
 }
 
