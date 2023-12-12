@@ -1,0 +1,15 @@
+.success-msg-box{
+    background-color: hsl(171, 100%, 41%);
+    padding: 30px;
+    border-radius: 5px;
+}
+.success-msg-box h3{
+   font-size: 1.5rem;
+}
+.success-msg-box h2{
+    font-size: 1.8rem;
+ }
+ .success-msg-box h2 span{
+    font-weight: bold;
+    color: #fff;
+ }

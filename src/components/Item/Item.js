@@ -1,6 +1,5 @@
 import {Link} from "react-router-dom";
-// import { useParams } from 'react-router-dom'
-// import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+
 
 const Item = ({id,name,category,img,price,stock}) => {
 

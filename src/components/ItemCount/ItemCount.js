@@ -23,15 +23,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
 
             <div className="container-controls">
-                <button onClick={increment} className="button is-small">
-                    <span className="icon">
+                <button onClick={increment} className="button is-normal is-warning is-light">
+                    <span className="icon is-size-5">
                         <i className='bx bx-plus'></i>
                     </span>
                 </button>
 
                 <span>{quantity}</span>
 
-                <button onClick={decrement} className="button is-small">
+                <button onClick={decrement} className="button is-normal is-warning is-light">
                     <span className="icon">
                         <i className='bx bx-minus'></i>
                     </span>
@@ -39,7 +39,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             </div>
 
             <div>
-                <button className="button is-dark mt-5" 
+                <button className="button is-success mt-5" 
                 onClick={()=> onAdd(quantity)} disabled={!stock}>Agregar al carrito
                 </button>
             </div>

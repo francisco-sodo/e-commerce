@@ -1,14 +1,14 @@
 .item-container-cart{
-    border: 1px solid #5a81ff;
+   
     border-radius: 5px;
-    background-color: rgb(240, 249, 255);
+    background-color: #ffd92e;
     width: 100%;
-    padding:30px;
+    padding:15px;
+    margin: auto;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    
-    
 }

@@ -15,13 +15,13 @@ const {cart, removeItem} = useContext(CartContext)
            cart.map((prod) => (
 
              <div className="item-container-cart" key={prod.id} {...prod} >
-
-             
-              {/* <img src={prod.img} alt={prod.name}/> */}
-             
+              <figure>
+                <img src={prod.img} alt={prod.name} width={220}></img>
+              </figure>
 
               <div>
-                  <h3 className="title is-5">{prod.name}</h3>
+                  <h4 className="is-size-7" >{prod.category.toUpperCase()}</h4>
+                  <h3 className="title is-4">{prod.name}</h3>
                   <p>Precio unitario: ${prod.price}</p>
                   <p>Cantidad: {prod.quantity}</p>
                   <p className="has-text-weight-bold">Precio total: ${prod.price * prod.quantity}</p>

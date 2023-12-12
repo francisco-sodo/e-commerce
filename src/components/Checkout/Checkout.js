@@ -1,3 +1,6 @@
+import '../../App.css'
+import './Checkout.css'
+import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { CartContext } from "../../context/CartContext"
 import { db } from '../../services/firebase/firebaseConfig'
@@ -51,7 +54,7 @@ const Checkout = () => {
                     outOfStock.push({ id: doc.id, ...dataDoc})
                 }
             })
-//!ACA ESTA EL PROBLEMA
+
             if(outOfStock.length === 0 ) {
                 await batch.commit()
                 
@@ -61,7 +64,7 @@ const Checkout = () => {
 
                 setOrderId(orderAdded.id)
                 clearCart()
-//!ACA ESTA EL PROBLEMA
+
             } else{
                 console.error("Hay productos sin stock")
             }
@@ -75,19 +78,29 @@ const Checkout = () => {
     }
 
     if(loading){
-        return <h2>Su orden se esta generando...</h2>
+        return <div className='container-f'>
+                 <h2>Su orden se esta generando...</h2>    
+                </div>
     }
     if(orderId){
-        return <h2>El id de su orden es: {orderId}</h2>
+        return <div className='container-f'>
+                    <div className='success-msg-box'>
+                        <h3>Muchas Gracias por tu Compra!</h3>
+                        <h2>El id de su orden es: <span>{orderId.slice(-7,-1)}</span></h2>
+                    </div>
+                    <div className="empty-cart-container" >
+                        <Link className="button is-normal is-info mt-5" to="/">Ver Productos</Link>
+                    </div>
+               </div>
     }
 
     
   return (
-    <div>
-        <h1>Checkout</h1>
-        <CheckoutForm onConfirm={createOrder}/>
-    
-    </div>
+  
+        <div className='container-f'>
+            <h1 className='title'>Finalizar compra</h1>
+            <CheckoutForm onConfirm={createOrder}/>
+        </div>
     
   )
 }

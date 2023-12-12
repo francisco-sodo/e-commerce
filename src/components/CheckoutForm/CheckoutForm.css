@@ -1,0 +1,18 @@
+.form-container{
+    background-color: hsl(206, 100%, 94%);
+    padding: 30px;
+    border-radius: 5px;
+}
+.form-f{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.form-f input{
+    border: none;
+    height: 30px;
+    border-radius: 2px;
+    padding: 5px;
+}

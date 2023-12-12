@@ -14,7 +14,7 @@ const ItemDetail = ({id, name, category, img, price, stock, description}) => {
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
 
-        const item = { id, name, price }
+        const item = { id, name, price, category, img }
         addItem(item, quantity)
    
 }
@@ -24,7 +24,10 @@ const ItemDetail = ({id, name, category, img, price, stock, description}) => {
 
   return (
     <div className="main-container">
-      <Link to='/'><p className="p-2">{"< Volver"}</p></Link>
+      <Link to='/'>
+        <button className=" button p-2 mb-2 is-small is-dark">{"< Volver"}</button>
+      </Link>
+
       <div className="sub-container" >
 
         <section>
@@ -38,10 +41,8 @@ const ItemDetail = ({id, name, category, img, price, stock, description}) => {
             
             <h2 className="title is-3">{name}</h2>
             <h4 className="subtitle is-size-5 is-uppercase">{category}</h4>
-            <p className="is-size-7 mb-4">{description}</p>
+            <p className="is-size-6 mb-4">{description}</p>
             <h4 className="is-size-4 mb-4">Precio: ${price}</h4>
-            
-            {/* <p className="is-size-6">Stock: {stock += - quantityAdded}</p> */}
             <p className="is-size-6">Stock: {stock}</p>
             
             
@@ -49,9 +50,11 @@ const ItemDetail = ({id, name, category, img, price, stock, description}) => {
 
           <div>
             {
-              quantityAdded > 0 ? 
-              (<Link to="/cart">Terminar compra</Link>) : 
-              (<ItemCount stock={stock} onAdd={handleOnAdd}/>)
+              quantityAdded > 0 
+              ? (<Link className="button is-success is-light" to="/cart">
+                <span class="icon is-medium"><i class='bx bxs-flag-checkered bx-tada is-size-5' ></i></span>
+                <span>Terminar compra</span></Link>) 
+              : (<ItemCount stock={stock} onAdd={handleOnAdd}/>)
              
             }
             

@@ -1,6 +1,6 @@
 .main-container-cart{
-    width: 100%;
-    max-width: 900px;
+    width: 80%;
+    max-width: 800px;
     padding:50px;
     margin: auto;
     
@@ -17,6 +17,13 @@
 .sub-container-cart{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+
+.empty-cart-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
