@@ -9,10 +9,14 @@
     gap: 15px;
 }
 
+.form-f input::placeholder{
+    color: rgb(76, 76, 76);
+    border: none;
+}
 
 .form-f input{
     border: none;
-    height: 30px;
-    border-radius: 2px;
-    padding: 5px;
+}
+.form-f button{
+    width: 100%;
 }

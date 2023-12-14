@@ -6,8 +6,14 @@ import { Link, NavLink } from "react-router-dom"
 
 
 const NavBar = () => {
+
+
+
+
+
+
   return (
-    <nav className="navbar is-link is-spaced">
+    <nav className="navbar is-link is-spaced ">
       <div className="is-flex p-2 container">
 
         <Link to="/" className="container navbar-brand">
@@ -16,15 +22,15 @@ const NavBar = () => {
           </figure>
         </Link>
 
-          <span class="navbar-burger" data-target="navbarMenuHeroA">
-            <span></span>
-            <span></span>
-            <span></span>
+          <span role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu-fs">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </span>
         
 
-        <div className="navbar-end">
-          <ul className="navbar-menu mr-5">
+        <div id="navbarMenu-fs" className="navbar-menu">
+          <ul className="navbar-end mr-5">
             <li className="navbar-item p-1">
               <NavLink to="/category/lego" className="button is-info" >Lego</NavLink>
             </li>
@@ -44,6 +50,8 @@ const NavBar = () => {
       </div>
     </nav>
   );
+
+ 
 };
 
 export default NavBar;

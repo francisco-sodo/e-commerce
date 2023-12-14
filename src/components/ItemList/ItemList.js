@@ -6,7 +6,6 @@ const ItemList = ({products}) => {
 
   return (
         <div className="main-container">
-          
           <div className="grid-container"> 
             {
               products.length > 0 

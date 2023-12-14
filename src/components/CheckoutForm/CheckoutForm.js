@@ -20,19 +20,34 @@ const CheckoutForm = ({onConfirm}) => {
     <div className="form-container">
         <form className="form-f" onSubmit={handleConfirm}>
 
+            <div className='control'>
+                <input required 
+                className='input' 
+                placeholder="Nombre" 
+                type="text" value={name} 
+                onChange={({target}) => setName(target.value)}></input>
+            </div>
             
-                <input placeholder="Nombre" type="text" value={name} onChange={({target}) => setName(target.value)}></input>
-           
-                <input placeholder="Telefono"  type="text" value={phone} onChange={({target}) => setPhone(target.value)}></input>
-            
-                <input placeholder="Email" type="email" value={email} onChange={({target}) => setEmail(target.value)}></input>
-           
+            <div className='control'>
+                <input required 
+                className='input' 
+                placeholder="Telefono"  
+                type="text" value={phone} 
+                onChange={({target}) => setPhone(target.value)}></input>
+            </div>
+
+            <div className='control'>
+                <input required 
+                className='input' 
+                placeholder="Email" 
+                type="email" value={email} 
+                onChange={({target}) => setEmail(target.value)}></input>
+            </div>
 
             <div>
                 <button className='button is-normal is-success mt-4' type="submit">
                     <span><i class='bx bxs-check-shield'></i> Crear orden</span>
-                    
-                    </button>
+                </button>
             </div>
 
         </form>
