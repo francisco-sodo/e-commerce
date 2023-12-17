@@ -1,5 +1,4 @@
 .item-container-cart{
-   
     border-radius: 5px;
     background-color: #ffd92e;
     width: 100%;
@@ -12,3 +11,17 @@
     align-items: center;
     margin-bottom: 10px;
 }
+
+.item-container-cart figure{
+   width: 240px;
+   height: 200px; 
+}
+
+.item-container-cart figure img{
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;
+  object-position: center;
+     
+ }
+

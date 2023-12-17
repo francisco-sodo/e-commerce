@@ -1,0 +1,24 @@
+
+
+@media screen and (max-width: 1022px) {
+    nav{
+        position:relative;
+    }
+    .navbar-menu {
+        position:absolute;
+        z-index: 10;
+        right: 0;
+        top:70px;
+
+        box-shadow: none;
+        background-color:#3e58bc;
+        width: 200px;
+    }
+    .navbar-menu ul{
+        width: 100%;
+    }
+    .navbar-menu ul li a{
+        width: 100%;
+        background-color: transparent !important;
+    }
+  }

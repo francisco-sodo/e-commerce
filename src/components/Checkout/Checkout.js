@@ -99,6 +99,7 @@ const Checkout = () => {
   
         <div className='container-f'>
             <h1 className='title'>Finalizar compra</h1>
+            <p className="mb-4">Crea tu orden ingresando los datos solicitados.</p>
             <CheckoutForm onConfirm={createOrder}/>
         </div>
     

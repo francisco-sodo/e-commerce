@@ -6,7 +6,6 @@ const ItemCount = ({stock, onAdd}) => {
 
     const [quantity, setQuantity]=useState(1);
 
-
     const increment = () =>{
         quantity < stock && setQuantity(quantity + 1)
     }
@@ -21,7 +20,6 @@ const ItemCount = ({stock, onAdd}) => {
         <div>
             <h3 className="is-size-7 mb-3">Cantidad</h3>
             
-
             <div className="container-controls">
                 <button onClick={increment} className="button is-normal is-warning is-light">
                     <span className="icon is-size-5">
@@ -45,8 +43,6 @@ const ItemCount = ({stock, onAdd}) => {
             </div>
 
         </div>
-
-   
   )
 }
 

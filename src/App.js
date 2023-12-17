@@ -2,7 +2,6 @@ import "./App.css"
 import "bulma/css/bulma.css";
 import "boxicons/css/boxicons.min.css";
 
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
@@ -26,7 +25,7 @@ function App(){
                     <NavBar/>
             
                     <Routes>
-                        <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Retro Toys"}/>} />
+                        <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a Retro Toys"} />} />
                         <Route path="/category/:categoryId" element={<ItemListContainer/>} />
                         <Route path="/item/:itemId" element={<ItemDetailContainer/>} />
                         <Route path="/cart" element={<Cart/>} />
@@ -39,10 +38,7 @@ function App(){
                 </CartProvider>    
             
             </BrowserRouter>
-
-            
         </div>
-        
     )
 }
 

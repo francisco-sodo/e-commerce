@@ -13,13 +13,9 @@ const ItemListContainer = ({greeting}) =>{
 
     const [products, setProducts]= useState([])
 
-    
-
     const { categoryId } = useParams()
 
     useEffect(()=>{
-        
-
         const collectionRef = categoryId
         ? query(collection(db,'products'), where('category', '==', categoryId))
         : collection (db, 'products')
@@ -38,24 +34,22 @@ const ItemListContainer = ({greeting}) =>{
        
     }, [categoryId])
 
-  
+
 
 
     return(
         <div className="hero is-small">
 
-    
             <div className="hero-body container p-6 ">
-                <h1 className="title has-text-link-dark">{greeting}</h1>
-            </div>
+                <h1 className="title has-text-link-dark has-text-centered is-size-4-touch">{greeting}</h1>
+                <h2 className="subtitle is-size-4 is-uppercase has-text-link-dark has-text-weight-bold">{categoryId}</h2>
+            </div>    
 
         
             <div className="mb-6">
                 <ItemList products={products}/>
             </div>
             
-        
-           
         </div>
     )
 }

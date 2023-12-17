@@ -20,7 +20,6 @@ const Cart = () => {
         <div className="empty-cart-container" >
           <Link className="button is-normal is-info" to="/">Ver Productos</Link>
         </div>
-
       </div>
     );
   }
@@ -30,7 +29,7 @@ const Cart = () => {
 
         <section className="header-container-cart">
             <h1 className="title">Carrito</h1>
-            <h2 className="title is-5">Total: ${total()}</h2>
+            <h2 className="title is-4 has-text-link">Total: ${total()}</h2>
         </section>
       
         <section >

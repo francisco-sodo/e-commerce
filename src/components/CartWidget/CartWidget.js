@@ -12,8 +12,8 @@ const CartWidget = () => {
     return(
         
             <Link to='/cart' className="button is-danger"
-            style={{display: totalQuantity() > 0 ? 'flex' : 'none'}}
-            >
+            style={{display: totalQuantity() > 0 ? 'flex' : 'none'}}>
+                
                 <div className="icon">
                     <i className='bx bxs-cart bx-sm'></i>
                 </div>

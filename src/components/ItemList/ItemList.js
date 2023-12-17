@@ -6,6 +6,7 @@ const ItemList = ({products}) => {
 
   return (
         <div className="main-container">
+         
           <div className="grid-container"> 
             {
               products.length > 0 
@@ -13,6 +14,7 @@ const ItemList = ({products}) => {
               : <p>Cargando...</p>
             }
           </div>
+          
         </div>
     
   ) 

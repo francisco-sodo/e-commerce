@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { createContext, useState } from "react";
 
 
@@ -7,10 +8,13 @@ export const CartContext = createContext(
         cart:[]
     });
 
+//localStorage
+const initCart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
 const CartProvider = ({ children }) => {
 
-    const [cart, setCart] = useState([]);
-
+    const [cart, setCart] = useState(initCart);
 
     //si el producto esta o no esta en el carrito
    const isInCart = (itemId) => {
@@ -47,11 +51,12 @@ const CartProvider = ({ children }) => {
      }
 
 
-   
+     useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+     }, [cart])
+     
 
-   
 
-    
     return (
         <CartContext.Provider value={{cart, addItem, removeItem, clearCart, totalQuantity, total}}>
             { children }
